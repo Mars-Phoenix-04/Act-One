@@ -1,0 +1,719 @@
+/* ----------------------------------===== Estilo default para todas las paginas =====----- */
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: var(--tamano);
+    background-color: var(--color2);
+    overflow-x: hidden;
+}
+main{
+    width: 100vw;
+    background-color: var(--color4);
+
+    background-image: url(../Assets/Img/JPG/Fondo.jpg);
+    background-attachment:fixed;
+    background-position: 0px 0px, 50% 50%;
+    background-size: 100% 200%, cover;
+    background-repeat: no-repeat, no-repeat;
+
+    position: absolute;
+    z-index: 100;
+
+    
+}
+.contenedor{
+    margin-top: 7%;
+}
+
+/* --------------------------------------------------===== Encabezado y barra de navegacion =====----- */
+.MenuEncabezado{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    padding: 0%;
+    background-color:#a7312100;
+    z-index: 10000000000;
+
+    max-height: 250px;
+    width: 100%;
+    position: fixed;
+    transition: 200ms ease-in-out background-color, 200ms ease-in-out box-shadow;
+}
+/* ---------------------------------------------------===== Barra de Navegacion CAMBIO =====----- */
+.SeSalioDelBanner{
+    background-color:#a73121;
+    box-shadow: 0 0 0.5rem rgb(0, 0, 0, 0.6);
+}
+
+
+/* LOGO DEL MENU */
+.MenuLogo{
+    grid-area: 1 / 1 / 6 / 2;
+    padding: 0% 10%;
+}
+.MenuLogo img{
+    width: 100%;
+}
+/* LINKS */
+.BarraNavegacion{
+    grid-area: 1 / 2 / 6 / 5;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.links{
+    color: var(--color4);
+    text-decoration: none;
+    margin: 0% 10%;
+    position: relative;
+
+    
+    font-family: var(--estilot);
+    font-weight: 400;
+    font-size: 1.5rem;
+    transition: 0.3s ease-in-out;
+}
+.links:hover{
+    font-weight: 600;
+}
+
+/* ======== EFECTO DE SUBRAYADO EN LOS LINKS ========*/
+.links::after {
+    position: absolute;
+    content: "";
+    background-color: var(--color4);
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: 0.3s ease all;
+}
+.links:hover::after {
+    width: 100%;  
+}
+
+
+/* --------------------------------------------------------===== Banner de la pagina de inicio =====----- */
+.Banner{
+    background-color: var(--color1);
+    width: 100vw;
+    height: 100vh;
+    z-index: 50;
+}
+/* Video en el Banner */
+.BannerVideo{
+    z-index: 48;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+
+    opacity: 50%;
+    background-color: var(--color1);
+    background-image: url(../Assets/Img/JPG/teatro.jpg);
+    background-attachment:fixed;
+    background-position: 0px 0px, 50% 50%;
+    background-size: 200% 200%, cover;
+    background-repeat: no-repeat, no-repeat;
+}
+.BannerVideo video{
+    width: 100vw;
+    height: auto;
+}
+/* Texto en el Banner */
+.BannerTxt{
+    color: black;
+    text-align: center;
+    z-index: 49;
+    position: absolute;
+    padding: 14% 10% ;
+}
+.BannerTxt h1{
+    font-family: var(--estiloTBanner);
+    font-size: 5rem;
+    color: var(--color4);
+}
+.BannerTxt h2{
+    font-family: var(--estiloT);
+    font-size: 3rem;
+    font-weight: 200;
+    color: var(--color4);
+    margin: 0% 0% 3% 0%;
+}
+/* Boton en el Banner */
+.BannerBTN{
+    background: var(--color4);
+    color: var(--color2);
+    border: none;
+    padding: 1.5% 6%;
+
+    font-size: 2rem;
+    font-family: var(--estiloT);
+    font-weight: bold;
+
+    border-radius: 100px;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+.BannerBTN:hover{
+    background: var(--color1);
+    color: var(--color3);
+}
+
+
+/* -----------------------------------------------===== Catalogo de Musicales =====----- */
+.Musicales{
+    width: 100%;
+}
+.MusicalContenedorTXT {
+    padding: 2%;
+    text-align: center;
+}
+.MusicalContenedorTXT h1{
+    font-family: var(--estiloTBanner);
+    font-size: 4rem;
+    color: var(--color2);
+}
+.MusicalContenedorTXT h2{
+    font-family: var(--estiloT);
+    font-size: 2rem;
+    color: var(--color1);
+}
+
+/* Carrusel de Musicales */
+.Carrusel{
+    width: 100%;
+}
+.ContenedorCarrusel{
+    display: flex;
+    max-width: 100vw;
+    height: 66vh;
+
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.ItemDelCarrusel{
+    background-color: transparent;
+    position: absolute;  
+    border-radius: 15px;
+    background-size: contain ;
+    transition: all 0.3s ease-in-out;
+    max-width: 300px;
+    max-height: 300px;
+}
+/* VINILO  */
+.Vinilo{
+    position: absolute;
+    width: 37%;
+    z-index: 20;
+    scale: 0.7;
+    animation: rotacion 2s linear infinite;
+    left: 39%;
+}
+/* IMAGEN CENTRAL DEL CARRUSEL */
+.ItemDelCarrusel_3 .PortadaMusical{
+    box-shadow: -2px 5px 33px 6px rgb(0, 0, 0, 0.35);
+    border-radius: 15px;
+    cursor: pointer;
+    z-index: 34;
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+.ItemDelCarrusel_3 .PortadaMusical:hover{
+    scale: 1.05;
+}
+
+.PortadaMusical{
+    width: 100%;
+    border-radius: 15px;
+    background-size: contain ;
+}
+/* NOMBRE DEL MUSICAL */
+.NombreMusical{
+    opacity: 0;
+    font-size: 2rem;
+    font-family: var(--estiloT);
+    color: var(--Texto);
+    font-weight: 1000;
+    line-height: 1;
+
+    margin-top: 5%;
+
+    animation: desfadeo 0.2s;
+}
+.ItemDelCarrusel_3 .NombreMusical{
+    animation: fadeo 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+/* AUTOR DEL MUSICAL */
+.AutorMusical{
+    opacity: 0;
+    font-size: 1rem;
+    font-family: var(--estilot);
+    color: var(--Texto);
+    margin-top: 2%;
+
+    animation: desfadeo 0.2s;
+}
+.ItemDelCarrusel_3 .AutorMusical{
+    animation: fadeo 1s ;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.ItemDelCarrusel_1{
+    left: 15%;
+    transform: translateX(-50%);
+}
+
+.ItemDelCarrusel_1, .ItemDelCarrusel_5{
+    max-width: 250px;
+    max-height: 250px;
+    z-index: 18;    
+    opacity: 0.2;
+
+}
+.ItemDelCarrusel_2, .ItemDelCarrusel_4{
+    max-width: 300px;
+    max-height: 300px;
+
+    opacity: 0.8;
+    z-index: 19;
+}
+
+.ItemDelCarrusel_2{
+    left: 28%;
+    transform: translateX(-50%);
+}
+
+.ItemDelCarrusel_3{
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 34;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.ItemDelCarrusel_6{
+    opacity: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 22;
+    
+}
+.ItemDelCarrusel_4{
+    left: 72%;
+    transform: translateX(-50%);
+}
+.ItemDelCarrusel_5{
+    left: 80%;
+    transform: translateX(-26%);
+}
+
+/*  Controladores de la galeria para hacer woosh */
+.ControladorDelCarrusel{
+    position: relative;
+    width: 100%;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.ControladoresDelCarruselAnterior{
+    grid-area: 1 / 1 / 2 / 2;
+    cursor: pointer;
+}
+.ControladoresDelCarruselSiguiente{
+    grid-area: 1 / 5 / 2 / 6;
+    cursor: pointer;
+}
+.ImagenGaleria{
+    width: 100%;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.ImagenGaleria:hover{
+    scale: 1.1;
+}
+
+
+/* ----------------------------------------------------------===== Sobre Nosotros =====----- */
+.SobreNosotros{
+    width: 100%;
+    text-align: center;
+}
+.ContenedorSobre{
+    padding: 5%;
+}
+.ContenedorSobre h1{
+    font-family: var(--estiloTBanner);
+    font-size: 4rem;
+    color: var(--color2);
+}
+
+.ContenedorSobreDescripcion{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.ContenedorSobreImagenes{
+    grid-area: 1 / 1 / 6 / 3;
+    position: relative;
+    
+}
+.ImagenSobreNosotros{
+    position: relative;
+    margin: 10% 0%;
+    border-right: solid var(--color1) 20px;
+
+    animation: redondeadobordeadocool 7s ease-in-out infinite;
+}
+.DiscoSobreNosotros{
+    width: 65%;
+    position: absolute;
+    z-index: 1;
+    animation: rotacion 5s linear infinite;
+}
+.ImagencitaChidaDeNosotros{
+    position: relative;
+    z-index: 2;
+    border-radius: 50%;
+    width: 50%;
+    padding: 7%;
+}
+
+/* TEXTOS DEL SOBRE NOSOTROS */
+.ContenedorSobreTXT{
+    grid-area: 1 / 3 / 6 / 6;
+
+    text-align: justify;
+    font-family: var(--estiloT);
+    font-size: 1.5rem;
+    color: var(--Texto);
+    padding: 0% 10% 0% 12%;
+}
+.ContenedorSobreTXT p{
+    margin-top: 5%;
+}
+.ContenedorSobreTXT ul li{
+    margin-top: 6%;
+    background-color: var(--color1);
+    color: var(--color4);
+    padding: 5%;
+    list-style: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-family: var(--estilot);
+
+    animation: cambiodecoloreslista 20s ease-in-out infinite;
+    transition: 0.3s ease-in-out;
+}
+.ContenedorSobreTXT ul li:nth-child(odd){
+    background-color: var(--color5);
+    animation: cambiodecoloreslistaInversa 20s ease-in-out infinite;
+}
+.ContenedorSobreTXT ul li:hover{
+    scale: 1.05;
+}
+
+.AIniciarTexto{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 10%;
+    color: var(--color1);
+    font-family: var(--estiloTBanner);
+}
+
+/* ----------------------------------------------------------------------===== Pie de Pagina =====----- */
+footer{
+    width: 100vw;
+    background-color: rgb(57, 3, 3);
+}
+.PieDePagina{
+    width: 95%;
+
+    font-family: var(--estilot);
+    font-size: 1rem;
+    font-weight: 200;
+    color: var(--color4);
+    padding: 2%;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+}
+.PieDePagina a{
+    width: 100%;
+    grid-area: 1 / 3 / 1 / 3;
+}
+
+/* LINKS DEL FOOTER */
+.LinksFooter{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.linksF{
+    color: var(--color4);
+    text-decoration: none;
+    position: relative;
+    font-family: var(--estilot);
+    font-weight: 400;
+    font-size: 1.5rem;
+    transition: 0.3s ease-in-out;
+}
+.linksF:hover{
+    font-weight: 600;
+}
+
+/* ======== EFECTO DE SUBRAYADO EN LOS LINKS ========*/
+.linksF::after {
+    position: absolute;
+    content: "";
+    background-color: var(--color4);
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: 0.3s ease all;
+}
+.linksF:hover::after {
+    width: 100%;  
+}
+
+/* TEXTOS DEL FOOTER */
+.DescripcionFooter{
+    grid-area: 2 / 2 / 2 / 5;
+}
+.SegundaDescripcionFooter{
+    grid-area: 3 / 2 / 3 / 5;
+}
+
+/* IMAGEN DEL LOGO EN EL FOOTER */
+.PieDePagina img{
+    width: 100%;
+    transition: 0.5s ease-in-out; 
+    padding: 5% 0%;
+}
+.LogoFooter img:hover{
+    filter: opacity(50%);
+}
+.LogoMastar{
+    padding-left: 2%;
+}
+
+.ProximamenteTxt{
+    grid-area: 1 / 5 / 1 / 5;
+    font-family: var(--estiloT);
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    font-size: 2rem;
+}
+
+/* ----------------------------------------------------------===== MEDIA QUERIES =====----- */
+@media screen and (max-width:1300px) {
+    html{
+        font-size: 12px;
+    }
+    .BannerTxt {
+        padding: 13% 10%;
+    }
+    .BannerTxt h1{
+        font-size: 7rem;
+    }
+    /* Carrusel de Musicales */
+    .ContenedorCarrusel{
+        height: 60vh;
+    }
+    .Vinilo{
+        width: 34%;
+        scale: 0.71;
+        left: 40%;
+    }
+    .NombreMusical{
+        padding-top: 5%;
+        font-size: 2.5rem;
+        line-height: 1;
+    }
+    .AutorMusical{
+        font-size: 2rem;
+    }
+    .AIniciarTexto{
+        font-size: 3rem;
+    }
+    /*  Todos los items dentro del carrusel */
+    .ItemDelCarrusel{
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    .ItemDelCarrusel_1, .ItemDelCarrusel_5{
+        max-width: 150px;
+        max-height: 150px;
+    }
+    .ItemDelCarrusel_2, .ItemDelCarrusel_4{
+        max-width: 250px;
+        max-height: 250px;
+    }
+
+    .ItemDelCarrusel_3{
+        max-height: 300px;
+    }
+}
+
+
+/* -------------------------------------------------------===== Animaciones =====----- */
+@keyframes fadeo {
+    0%{
+        opacity: 1;
+        transform: translateY(-60px) scale(0.9);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+@keyframes desfadeo {
+    0% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+}
+@keyframes rotacion {
+    from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+}
+@keyframes escalarVinilo {
+    from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(0.8);
+      }
+}
+@keyframes cambiodecoloreslista {
+    0% {
+        background-color: #2b0f0f;
+    }
+    50% {
+        background-color: #912626;
+    }
+    100% {
+        background-color: #2b0f0f;
+    }
+}
+@keyframes cambiodecoloreslistaInversa {
+    0% {
+        background-color: #912626;
+    }
+    50% {
+        background-color: #2b0f0f;
+    }
+    100% {
+        background-color: #912626;
+    }
+}
+@keyframes redondeadobordeadocool {
+    0% {
+        border-radius: 0;
+    }
+    50% {
+        border-radius: 20px;
+        border-color: var(--color6);
+    }
+    100% {
+        border-radius: 0;
+    }
+}
+
+
+/* --------------------------------------------------------------------===== SVG ANIMADOS =====----- */
+.linea {
+    fill: #2b0f0f;
+    animation: bordeAnterior 3s ease-in-out infinite;
+}
+
+.flecha {
+    fill: #912626;
+    opacity: 1;
+    animation: movimientoAnterior 3s ease-in-out infinite;
+}
+
+@keyframes movimientoAnterior {
+    0% {
+        transform: translateX(300px) scaleX(0.9);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(300px) scaleX(0.9);
+
+    }
+}
+@keyframes bordeAnterior {
+    0% {
+        transform: translateX(-100px) ;
+    }
+    50% {
+        transform: translateX(-30px) scaleX(0.5);
+    }
+    100% {
+        transform: translateX(-100px) ;
+    }
+}
+.linea2 {
+    fill: #2b0f0f;
+    animation: bordeSiguiente 3s ease-in-out infinite;
+}
+
+.flecha2 {
+    fill: #912626;
+    
+    opacity: 1;
+    animation: movimientoSiguiente 3s ease-in-out infinite;
+}
+
+@keyframes movimientoSiguiente {
+    0% {
+        transform: translateX(-200px) scaleX(0.9);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-200px) scaleX(0.9);
+
+    }
+}
+@keyframes bordeSiguiente {
+    0% {
+        transform: translateX(80px) ;
+    }
+    50% {
+        transform: translateX(500px) scaleX(0.5);
+    }
+    100% {
+        transform: translateX(80px) ;
+    }
+}

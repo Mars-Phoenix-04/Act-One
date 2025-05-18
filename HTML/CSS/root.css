@@ -1,0 +1,23 @@
+/* -----===== Importar Tipografias =====----- */
+@import url('https://fonts.googleapis.com/css2?family=Bigshot+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Zen+Antique&display=swap');
+
+/* -----===== ROOT =====----- */
+:root{
+    /*Paleta de colores*/
+    --color1: #952323;
+    --color2: #A73121;
+    --color3: #DAD4B5;
+    --color4: #F2E8C6;
+    /*ColoresExtras*/
+    --color5: #33030D;
+    --color6: #561C24;
+    --color7: #351f1f;
+    /*Textos y Tipografias*/
+    --Texto: rgb(89, 21, 21);
+    --INVTexto: white ;
+    --tamano: 18px;
+    --estilot:"Montserrat", sans-serif;
+    --estiloT: "Zen Antique", serif;
+    --estiloTChidos: "Bigshot One", serif;
+    --estiloTBanner: "Bigshot One", serif;
+}

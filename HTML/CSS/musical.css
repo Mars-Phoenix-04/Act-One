@@ -1,0 +1,973 @@
+/* -----===== Estilo default para todas las paginas =====----- */
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: var(--tamano);
+    background-color: var(--color6);
+    overflow-x: hidden;
+    background-image: url("../Assets/Img/JPG/FondoMusical.jpg");
+    background-attachment:fixed;
+    background-position: 0px 0px, 50% 50%;
+    background-size: 100% 200%, cover;
+    background-repeat: no-repeat, no-repeat;
+}
+main{
+    width: 100%;
+    background-color: #5b1821a0;
+}
+.contenedor{
+    padding: 10% 5%;
+}
+.fondonegro{
+    background-color: #311116b9;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 102;
+}
+
+
+/* ----------------------------------------===== Encabezado y barra de navegacion =====----- */
+.MenuEncabezado{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    padding: 0%;
+    background-color: transparent;
+    z-index: 100;
+
+    max-height: 250px;
+    width: 100%;
+    position: fixed;
+    transition: 200ms ease-in-out background-color, 200ms ease-in-out box-shadow;
+}
+/* ------------------------------------------------------------===== Barra de Navegacion CAMBIO =====----- */
+.vUELVE{
+    background-color:var(--color2);
+    box-shadow: 0 0 0.5rem rgb(0, 0, 0, 0.6);
+}
+
+/* LOGO DEL MENU */
+.MenuLogo{
+    grid-area: 1 / 1 / 6 / 2;
+    padding: 0% 10%;
+}
+.MenuLogo img{
+    width: 100%;
+}
+/* LINKS */
+.BarraNavegacion{
+    grid-area: 1 / 2 / 6 / 5;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.links{
+    color: var(--color4);
+    text-decoration: none;
+    margin: 0% 5%;
+    position: relative;
+    
+    font-family: var(--estilot);
+    font-weight: 400;
+    font-size: 1.5rem;
+    transition: 0.3s ease-in-out;
+}
+.links:hover{
+    font-weight: 600;
+}
+
+/* ======== EFECTO DE SUBRAYADO EN LOS LINKS ========*/
+.links::after {
+    position: absolute;
+    content: "";
+    background-color: var(--color4);
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: 0.3s ease all;
+}
+.links:hover::after {
+    width: 100%;  
+}
+
+.BTNRegresar{
+    grid-area: 1 / 5 / 6 / 6;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.BTNRegresar button{
+    background: transparent;
+    border: 3px solid  var(--color4);
+    color: var(--color4);
+    padding: 4% 15%;
+    font-size: 1.5rem;
+    font-family: var(--estilot);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.BTNRegresar button:hover{
+    background: var(--color4);
+    color: var(--color1);
+    font-weight: 700;
+}
+
+
+/* -------------------------------------------------------------------===== TARJETA DEL MUSICAL =====----- */
+.InformacionYDescripcionDelMusical{
+    background: linear-gradient(180deg,#a73121,#561c24,#33030d);
+    background-size: 180% 180%;
+    animation: degradadosuperchido 10s ease infinite;
+    border-radius: 50px;
+    box-shadow: -2px 5px 33px 6px rgb(0, 0, 0, 0.35);
+
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+}
+
+/* CONTENEDOR DE TODA LA INFO DEL MUSICAL */
+.ContenedorInfoMusical{
+    grid-area: 1 / 1 / 3 / 6;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 0px; 
+    padding: 2%;
+}
+/* PORTADA DEL MUSICAL */
+.PortadaDelMusical{
+    grid-area: 1 / 1 / 4 / 1;
+}
+.PortadaDelMusical img{
+    max-width: 300px;
+    border-radius: 25px;
+    box-shadow: -2px 5px 33px 6px rgb(0, 0, 0, 0.35);
+}
+/* CONTENEDOR DE LA INFORMACION DEL MUSICAL (NOMBRE&FECHA) */
+.ContenedorNombreYFechaMusical{
+    grid-area: 1 / 2 / 4 / 5;
+    color: var(--color4);
+    width: 100%;
+    align-content: center;
+    cursor: default;
+}
+.NombreMusical{
+    font-family: var(--estiloTChidos);
+    font-size: 4rem;
+}
+.FechaMusical{
+    font-family: var(--estilot);
+    font-size: 1.5rem;
+}
+.AutorMusical{
+    margin-top: 3%;
+    font-family: var(--estiloT);
+    font-size: 2rem;
+}
+
+/* Boton de PLAY PARA HACER PLAY WOOOO */
+.BotonReproduccion{
+    transition: 0.3s ease-in-out;
+}
+.BotonReproduccion:hover{
+    transform: translateX(-8px);
+    scale: 1.03;
+    cursor: pointer;
+}
+.MusicalBotonDePlay{
+    grid-area: 1 / 5 / 4 / 6;
+    align-content: center;
+}
+.fondoBoton {
+    fill: #33030d;
+}
+
+.ColorHojasYRamas {
+    fill: #f2e8c6;
+}
+
+.Vainas {
+    transform-origin: 493.51px 500.11px;
+    animation: rotacion 10s linear infinite;
+}
+.BotonPausa{
+    display: none;
+    
+}
+.BotonPausaColor{
+    fill: #f2e8c6;
+}
+.BotonPlay{
+    fill: #f2e8c6;
+    display: block;
+}
+
+/* SINOPSIS DEL MUSICAL */
+.SinopsisDelMusical{
+    grid-area: 4 / 1 / 4 / 6;
+    margin-top: 1%;
+}
+.SinopsisDelMusical h1{
+    color: var(--color4);
+    font-family: var(--estiloT);
+    font-weight: 00;
+    font-size: 2.5rem;
+}
+.SinopsisMusical{
+    margin-top: 1%;
+    color: var(--color4);
+    font-family: var(--estilot);
+    font-size: 1.5rem;
+}
+
+
+/* -----------------------------------------------===== Lista de Canciones para reproducir =====----- */
+.ListaDeCanciones{
+    grid-area: 3 / 1 / 4 / 6;
+    background-color: #0000006b;
+    padding: 2%;
+    border-radius: 50px;
+}
+.TitulosDeLaLista{
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+    padding: 0% 2%;
+    margin-bottom: 1.5%;
+}
+
+.TitulosDeLaLista h2{
+    font-size: 2rem;
+    color: var(--color3);
+    font-family: var(--estiloTChidos);
+}
+
+.LineaSeparacion{
+    min-height: 5px;
+    width: 100%;
+    background-color: #DAD4B5;
+}
+
+.Cancion{
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+
+    font-family: var(--estilot);
+    color: var(--color3);
+    font-size: 1.5rem;
+    padding: 1.5% 2%;
+   
+    border-radius: 100px;
+    transition: 0.3s ease-in-out;
+}
+.Cancion:hover{
+    background-color: #6014148f;
+    box-shadow: -2px 5px 33px 6px rgb(0, 0, 0, 0.35);
+    scale: 1.02;
+    cursor: pointer;
+}
+.TituloDeLaCancion, .EncabezadoNombreCancion{
+    grid-area: 1 / 2 / 2 / 4;
+}
+.AlbumDeCancion{
+    font-size: 1rem;
+    align-content: center;
+}
+
+
+/* ----------------------------------------------------------===== Autor o Creador del Musical =====----- */
+.ContenedorDelAutor{
+    background-color: var(--color4);
+    border-radius: 50px;
+
+    padding: 2%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 0px; 
+}
+
+.ContenedorImagenDelAutor{
+    grid-area: 1 / 1 / 5 / 2;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    flex-flow: column;
+}
+.ContenedorImagenDelAutor img{
+    border-radius: 25px;
+    max-height: 400px
+}
+
+.ContenedorNombreDelAutor{
+    grid-area: 1 / 2 / 2 / 5;
+    align-content:center;
+}
+.ContenedorNombreDelAutor h2{
+    color: var(--color1);
+    font-family: var(--estiloTChidos);
+    font-size: 3.5rem;
+    text-align: left;
+}
+
+.ContenedorBiografiaDelAutor{
+    grid-area: 2 / 2 / 5 / 5; 
+    font-family: var(--estilot);
+    font-size: 1rem;
+    text-align: justify;
+    align-content: flex-start;
+    color: var(--color6);
+    width: 90%;
+}
+
+.ContenedorRedesSocialesDelAutor{
+    width: 100%;
+    grid-area: 5 / 2 / 5 / 5;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row; 
+}
+.RedSocial{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.NombreDeRedSocial{
+    color: black;
+    font-family: var(--estiloT);
+    margin-left: 5%;
+    font-size: 1.5rem;
+
+    line-height: 1.2;
+}
+.IconoDeRedSocial{
+    max-width: 60px;
+}
+
+/* --------------------------------------------------------------------===== RESEÑAS =====----- */
+.ReseñaSeccion h2{
+    font-size: 5rem;
+    font-family: var(--estiloTChidos);
+    color: var(--color4);
+    text-align: center;
+}
+.ReseñaSeccion h3{
+    font-size: 2rem;
+    font-family: var(--estiloT);
+    color: var(--color4);
+    text-align: center;
+    margin-top: 1%;
+}
+.resenadeusuarioContenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.resena{
+    padding: 5%;
+    background-color: var(--color4);
+    border-radius: 50px;
+    flex-direction: column;
+}
+.TituloDeLaResena{
+    font-size: 2rem;
+    font-family: var(--estilot);
+    color: var(--color6);
+    font-weight: 700;
+}
+.DescripcionDeLaResena{
+    font-family: var(--estilot);
+    color: var(--color5);
+    margin-top: 1%;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.TituloSeccionResena{
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.AgregarResenaBTN{
+    width: 7%;
+    cursor: pointer;
+}
+.rojorojizonotanrojo {
+    fill: #33030d;
+   transition: fill 0.5s ease;
+}
+
+.blancoamarillo {
+    fill: #f2e8c6;
+    transition: fill 0.5s ease;
+}
+#MasResena{
+    animation: crecerboton 2s ease-in-out infinite;
+    transform-origin: 500px 500px;
+}
+
+.AgregarResenaBTN:hover .blancoamarillo {
+    fill: #33030d; 
+    border: #f2e8c6 5px solid;
+}
+
+.AgregarResenaBTN:hover .rojorojizonotanrojo {
+    fill: #f2e8c6;
+}
+
+/* --------------------------------------------------------------------===== Mural de Publicaciones =====----- */
+.MuralSeccion{
+    background-image: url("../Assets/Img/PNG/FondoPapel.png");
+    background-attachment:scroll;
+    background-position: 0px 0px, 100% 100%;
+    background-size: 100% 100%, cover;
+    background-repeat: no-repeat, no-repeat;
+}
+.MuralSeccion h2{
+    font-size: 5rem;
+    font-family: var(--estiloTChidos);
+    color: var(--color2);
+    text-align: center;
+}
+.MuralSeccion h3{
+    font-size: 2rem;
+    font-family: var(--estiloT);
+    color: var(--color1);
+    text-align: center;
+    margin-bottom: 2%;
+}
+.MuralEncabezadoBotonesETC{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.BTNCrearPublicacionMuro{
+    background: transparent;
+    border: 3px solid  var(--color2);
+    color: var(--color2);
+
+    padding: 1% 5%;
+
+    font-size: 1.5rem;
+    font-family: var(--estilot);
+
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.BTNCrearPublicacionMuro:hover{
+    background: var(--color2);
+    color: var(--color4);
+    font-weight: 700;
+}
+
+/*MURAL DE IMAGENES BASICAMENTE LA*/
+.MuralDeImagenes {
+    columns: 5 320px;
+    column-gap: 0.5em;
+    padding: 5%;
+}
+
+.ImagenMural {
+    position: relative;
+    overflow: hidden;
+}
+.ImagenMural img {
+    max-width: 100%;
+    margin-bottom: 0.5em;
+    display: block;
+    border-radius: 50px;
+
+    outline: 7px solid var(--color2);
+    outline-offset: -5px;
+}
+.ImagenMural .capadeinfodepublicacion {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 98%;
+
+    background-color: rgba(72, 4, 4, 0.712);
+    color: var(--color4);
+    border-radius: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+    text-align: center;
+}
+
+.ImagenMural:hover .capadeinfodepublicacion {
+    opacity: 1;
+    cursor: default;
+}
+
+.titulodelapublicacion {
+    font-size: 1.5rem;
+    font-family: var(--estiloT);
+    line-height: 1;
+    padding: 2%;
+}
+
+.descripciondelapublicacion {
+    font-size: 1rem;
+    font-family: var(--estilot);
+    padding: 1% 10%;
+}
+.autordelapublicacion{
+    font-size: 1rem;
+    font-family: var(--estiloTChidos);
+    padding: 2% 10%;
+}
+
+#editarboton{
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    width: 12%;
+}
+
+.ImagenMural svg {
+    position: absolute;
+    bottom: 6%;
+    right: 4%;
+
+    width: 18%;
+
+    cursor: pointer;
+    z-index: 2;
+}
+.ImagenMural svg:hover .rojorojizonotanrojo{
+    fill: #f2e8c6;
+}
+.ImagenMural svg:hover .blancoamarillo{
+    fill: #33030d;
+}
+.ContadorLikesPublicacion{
+    font-family: var(--estiloT);
+    font-size: 15rem;
+}
+/* --------------------------------------------------------------------===== Reproductor de audio =====----- */
+#ContenedorDelReproductorDeMusica{
+    background: #311116;
+    background: linear-gradient(180deg,#33030D,#7b1c29);
+    background-size: 120% 130%;
+    animation: degradadosuperchido 10s ease infinite;
+
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    height: 16vh;
+    width: 100%;
+    box-shadow: 0 0 3rem rgb(0, 0, 0, 0.6);
+}
+
+.LineaSuperiorChidaDelReproductor{
+    width: 100%; 
+    min-height: 7px; 
+    background-color: antiquewhite;
+    background: linear-gradient(90deg,#E8C999,#E9DFC3,#FFF8F8);
+    background-size: 180% 180%;
+    animation: degradadosuperchido 5s ease infinite;
+}
+
+.ContenedorDeTodoLoDelReproductor{
+    padding: 0% 2%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+    align-content: center;
+}
+.InfoDeLaCancion{
+    grid-area: 2 / 1 / 9 / 3;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-content: center;
+    align-items: center;
+}
+.ControladoresDelReproductor{
+    grid-area: 2 / 3 / 8 / 6;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+.ControladoresDelReproductorPLUS{
+    grid-area: 1 / 6 / 8 / 8;
+}
+
+.PortadaDeLaCancionEnReproduccion{
+    max-height: 80px;
+    max-width: 80px;
+    border-radius: 5px;
+    box-shadow: -2px 5px 33px 6px rgb(0, 0, 0, 0.35);
+    transition: 0.3s ease-in-out;
+}
+.InfoDeLaCancionEnReproduccion{
+    align-content: center;
+}
+.NombreDeLaCancionEnReproduccion{
+    font-size: 1.5rem;
+    font-family: var(--estiloTChidos);
+    color: var(--color4);
+    transition: 0.3s ease-in-out;
+}
+.AlbumDeLaCancionEnReproduccion{
+    font-size: 1rem;
+    font-family: var(--estilot);
+    color: var(--color4);
+    transition: 0.3s ease-in-out;
+}
+
+.ControlesREPO{
+    grid-area: 1 / 1 / 5 / 6;
+    width: 60%;
+    margin-left: 20%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.controles{
+    max-width: 30px;
+    cursor: pointer;
+    fill: #c7bea1;
+    transition: 0.2s fill ease-in;
+}
+.controles:hover{
+    fill: #f2e8c6;
+}
+
+.AmarilloClaroPLAYPAUSA{
+    fill: #f2e8c6;
+}
+.RojoNoRojoPLAYPAUSA{
+    fill: #33030d;;
+}
+#BTNReproduccionCancion{
+    max-width: 60px;
+    cursor: pointer;
+}
+.BotonPausaReproductor{
+    display: none;
+}
+
+.ContenedorBarraProgresoDeLaCancion {
+    grid-area: 6 / 3 / 9 / 6;
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    width: 100%;
+    border: none;
+}
+.ContenedorBarraProgresoDeLaCancion input[type="range"] {
+    flex-grow: 1;
+    appearance: none;
+    height: 1vh;
+    background-color: #c7bea1;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.ContenedorBarraProgresoDeLaCancion input[type="range"]::-webkit-slider-thumb {
+    width: 14px;
+    height: 14px;
+    background-color: var(--color4);
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-appearance: none;
+    border: none;
+}
+
+.ContenedorBarraProgresoDeLaCancion input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background-color: var(--color4);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.tiempo {
+    color: var(--color4);
+    font-size: 1rem;
+    font-family: var(--estilot);
+    text-align: center;
+}
+/* --------------------------------------------------------------------Formularios----- */
+.formularioparaagregarresena{
+    position: fixed;
+    top: 10%;
+    left: 22%;
+    z-index: 102;
+}
+.CFormResena{
+    padding: 5%;
+    border-radius: 50px;
+    border: var(--color4) solid 5px;
+    background-color: var(--color1);
+    width: 50vw;
+
+}
+.CFormResena h3{
+    font-family: var(--estiloTChidos);
+    font-size: 3rem;
+}
+.elmeroformularioresena{
+    display: flex;
+    flex-direction: column;
+    
+    padding: 5%;
+
+    font-family: var(--estilot);
+    color: var(--color4);
+    font-size: 1.5rem;
+}
+.labelquenoeslaberl{
+    padding: 2% 0%;
+}
+.elmeroformularioresena input{
+    width: 100%;
+    height: 20px;
+    padding: 4%;
+
+    text-align: left;
+    color: var(--color6);
+
+    border-radius: 15px;
+    background-color: var(--color4);
+    box-sizing: border-box;
+    border-style: none;
+    outline: none;
+
+    font-family: var(--estilot);
+    font-size: 1.1rem;
+}
+.elmeroformularioresena button{
+    
+    background: transparent;
+    border: 3px solid var(--color4);
+    color: var(--color4);
+    margin-top: 5%;
+    padding: 2%;
+    
+    font-size: 1.5rem;
+    font-family: var(--estilot);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.elmeroformularioresena button:hover{
+    background: var(--color4);
+    color: var(--color1);
+    font-weight: 700;
+}
+.BTNCerrarFResena{
+    position: absolute;
+    top: 9%;
+    right: -6%;
+    width: 8%;
+    cursor: pointer;
+    z-index: 103;
+    transition: 0.7s ease;
+}
+.BTNCerrarFResena:hover{
+    transform: rotate(180deg);
+}
+.cerrar{
+    fill: #f2e8c6;
+}
+
+/* --------------------------------------------------------------------===== Pie de Pagina =====----- */
+footer{
+    width: 100vw;
+    background-color: var(--color5);
+}
+.PieDePagina{
+    width: 95%;
+
+    font-family: var(--estilot);
+    font-size: 1rem;
+    font-weight: 200;
+    color: var(--color4);
+    padding: 2%;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+}
+.PieDePagina a{
+    width: 100%;
+    grid-area: 1 / 3 / 1 / 3;
+}
+
+/* LINKS DEL FOOTER */
+.LinksFooter{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.linksF{
+    color: var(--color4);
+    text-decoration: none;
+    position: relative;
+    font-family: var(--estilot);
+    font-weight: 400;
+    font-size: 1.5rem;
+    transition: 0.3s ease-in-out;
+}
+.linksF:hover{
+    font-weight: 600;
+}
+
+/* ======== EFECTO DE SUBRAYADO EN LOS LINKS ========*/
+.linksF::after {
+    position: absolute;
+    content: "";
+    background-color: var(--color4);
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: 0.3s ease all;
+}
+.linksF:hover::after {
+    width: 100%;  
+}
+
+/* TEXTOS DEL FOOTER */
+.DescripcionFooter{
+    grid-area: 2 / 2 / 2 / 5;
+}
+.SegundaDescripcionFooter{
+    grid-area: 3 / 2 / 3 / 5;
+}
+
+/* IMAGEN DEL LOGO EN EL FOOTER */
+.PieDePagina img{
+    width: 100%;
+    transition: 0.5s ease-in-out; 
+    padding: 5% 0%;
+}
+.LogoFooter img:hover{
+    filter: opacity(50%);
+}
+.LogoMastar{
+    padding-left: 2%;
+}
+
+.ProximamenteTxt{
+    grid-area: 1 / 5 / 1 / 5;
+    font-family: var(--estiloT);
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    font-size: 2rem;
+}
+/* --------------------------------------------------------------------===== Animaciones =====----- */
+@keyframes degradadosuperchido {
+    0% {
+      background-position: 0% 20%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 20%;
+    }
+}
+@keyframes rotacion {
+    from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+}
+@keyframes crecerboton {
+    0% {
+      scale: 0.8;
+    }
+    50% {
+      scale: 1;
+    }
+    100% {
+      scale: 0.8;
+    }
+}
+
+/* --------------------------------------------------------===== MEDIA QUERIES =====----- */
+@media screen and (max-width:1300px) {
+    html{
+        font-size: 13px;
+    }
+    .PortadaDelMusical img{
+        max-width: 250px;
+    }
+    .ContenedorImagenDelAutor img{
+        max-width: 300px;
+    }
+    .IconoDeRedSocial{
+        max-width: 40px;
+    }
+    .ContenedorBiografiaDelAutor{
+        font-size: 1.3rem;
+        
+    }
+    .ContadorLikesPublicacion{
+        font-size: 22rem;
+    }
+    .PortadaDeLaCancionEnReproduccion {
+        max-height: 70px;
+        max-width: 70px;
+    }
+    .controles {
+        max-width: 25px;
+    }
+    #BTNReproduccionCancion {
+        max-width: 45px;
+    }
+}
+

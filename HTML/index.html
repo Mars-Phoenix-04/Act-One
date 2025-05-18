@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FAVICON-->
+    <link rel="icon" type="image/x-icon" href="Assets/Ico/IconoTab.ico">
+    <!--Titulo en Pestana-->
+    <title>Act I | Explora Nuevas Historias y Reproduce</title>
+    <!--HOJAS DE ESTILO-->
+    <link rel='stylesheet' type='text/css' media='screen' href='CSS/main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='CSS/root.css'>
+    <!--Fuentes de Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bigshot+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Zen+Antique&display=swap" rel="stylesheet">
+</head>
+    <body>
+
+        <!-------------------------------------------- =========== ENCABEZADO / BARRA DE NAVEGACION =========== -->
+        <header class="MenuEncabezado" >
+
+            <!-- Logo y Nombre de la Webapi, webapp no se -->
+            <div class="MenuLogo">
+                <a href="index.html">
+                    <img src="Assets/Img/SVG/Logo.svg">
+                </a>              
+            </div>
+
+            <!-- Links Powerosos aka los que te llevan a las distintas secciones de la pagina-->
+            <nav class="BarraNavegacion">
+                <a class="links" href="#inicio">INICIO</a>
+                <a class="links" href="#albums">MUSICALES</a>
+                <a class="links" href="#sobre">SOBRE NOSOTROS</a>     
+            </nav>
+
+        </header>
+
+        <!--------------------------------------------------- Banner Con video chido y Svg ANimado (En proceso) -->
+        <section  class="Banner" id="inicio">
+
+            <div class="BannerVideo" >
+                <video autoplay="" muted="" loop="">
+                    <source src="/Assets/Video/BannerMusicales.mp4">
+                </video>
+            </div>
+
+            <div class="BannerTxt" id="inicio">
+                <h1>
+                    ENCUENTRA TU NUEVO MUSICAL FAVORITO
+                </h1>
+                <h2>
+                    Más que solo música, una historia
+                </h2>
+                <button class="BannerBTN" >
+                    Comienza a escuchar
+                </button>
+            </div>
+            
+        </section>
+
+        <!------------------------------------------------------ =========== MAIN TODO EL CONTENIDO =========== -->
+        <main>
+            <div id="albums"></div>
+            <!-- CARRUSEL DE MUSICALES -->
+            <section class="Musicales" >
+                <div class="MusicalContenedorTXT contenedor">
+                    <h1>Catálogo de Musicales</h1>
+                    <h2>Haz clic en la portada para conocer y reproducir la obra</h2>
+                    <br>
+                    <div class="Carrusel">
+                        <div class="ContenedorCarrusel">
+
+                            <!-- Controladores aka Flechitas -->
+                            <!-- SVGS ANIMADOS, RECUERDA QUE LA ANIMACION Y DISEÑO ESTA EN CSS -->
+                            <div class="ControladorDelCarrusel">
+                                <!-- FLECHA DE ANTERIOR -->
+                                <svg onclick="AnteriorMusical()" id="Layer_1" class="ControladoresDelCarruselAnterior" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+                                    <rect class="linea" x="714.3" y="100" width="87" height="800" rx="20.37" ry="20.37" />
+                                    <path class="flecha" d="M602.08,708.37c29.52-.11,50.33-29.25,40.58-57.47-9.21-26.66-19.04-53.11-28.63-79.64-13.03-36.05-26.14-72.07-39.01-108.18-.89-2.51-.78-5.91,.13-8.45,22.15-61.7,44.11-123.46,66.9-184.92,12-32.38-13.24-61.14-41.78-60.04-8.36,.32-15.77,3.43-22.94,7.54-44.36,25.45-88.78,50.82-133.17,76.22-73.8,42.23-147.57,84.5-221.42,126.64-12.24,6.98-20.66,16.64-23.24,30.67-3.53,19.27,4.45,36.24,21.82,46.29,25.44,14.72,51,29.23,76.51,43.83,93.25,53.36,186.52,106.71,279.75,160.11,7.63,4.37,15.56,7.44,24.48,7.4Z" />
+                                  </svg>
+                                <!-- FLECHA DE SIGUIENTE -->
+                                <svg onclick="SiguienteMusical()" id="Layer_1" class="ControladoresDelCarruselSiguiente" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+                                    <rect class="linea2" x="198.7" y="100" width="87" height="730" rx="20.38" ry="20.38"/>
+                                    <path class="flecha2" d="M397.92,708.37c-29.52-.11-50.33-29.25-40.58-57.47,9.21-26.66,19.04-53.11,28.63-79.64,13.03-36.05,26.14-72.07,39.01-108.18,.89-2.51,.78-5.91-.13-8.45-22.15-61.7-44.11-123.46-66.9-184.92-12-32.38,13.24-61.14,41.78-60.04,8.36,.32,15.77,3.43,22.94,7.54,44.36,25.45,88.78,50.82,133.17,76.22,73.8,42.23,147.57,84.5,221.42,126.64,12.24,6.98,20.66,16.64,23.24,30.67,3.53,19.27-4.45,36.24-21.82,46.29-25.44,14.72-51,29.23-76.51,43.83-93.25,53.36-186.52,106.71-279.75,160.11-7.63,4.37-15.56,7.44-24.48,7.4Z"/>
+                                  </svg>
+                            </div>
+                            <img class="Vinilo" src="Assets/Img/PNG/Disco.png"> 
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- SOBRE NOSOTROS TEXTO E IMAGENES -->
+            <div id="sobre"></div>
+
+            <section class="SobreNosotros">
+
+                <div class="ContenedorSobre contenedor">
+                    
+                    <h1>Sobre "Act I"</h1>
+
+                    <div class="ContenedorSobreDescripcion">
+
+                        <div class="ContenedorSobreImagenes">
+                            <div class="ImagenSobreNosotros">
+                                <img class="DiscoSobreNosotros" src="Assets/Img/PNG/Disco.png">
+                                <img class="ImagencitaChidaDeNosotros" src="Assets/Img/JPG/AudifonosMusica.jpg">
+                            </div>
+
+                            <div class="ImagenSobreNosotros">
+                                <img class="DiscoSobreNosotros" src="Assets/Img/PNG/Disco.png">
+                                <img class="ImagencitaChidaDeNosotros" src="Assets/Img/JPG/AudifonosReproductor.jpg">
+                            </div>
+
+                            <div class="ImagenSobreNosotros">
+                                <img class="DiscoSobreNosotros" src="Assets/Img/PNG/Disco.png">
+                                <img class="ImagencitaChidaDeNosotros" src="Assets/Img/JPG/GrabandoMusica.jpg">
+                            </div>
+                        </div>
+
+                        <div class="ContenedorSobreTXT">
+                            <p>
+                                Esta aplicación web ofrece una experiencia completa
+                                para quienes disfrutan de los musicales, ya sean de
+                                Broadway o independientes. Permite reproducir
+                                canciones, conocer detalles sobre cada obra y
+                                conectar con otros fans a través de reseñas y
+                                contenido creativo.
+                            </p>
+                            <p>
+                                También funciona como una plataforma colaborativa
+                                donde los usuarios pueden compartir fanarts,
+                                dejar opiniones y descubrir nuevas obras musicales.
+                            </p>
+                            <p>
+                                Esta es la lista de todas las funcionalidades:
+                            </p>
+                            <ul>
+                                <li>
+                                    Reproducir canciones de musicales
+                                </li>
+                                <li>
+                                    Ver álbumes y portadas
+                                </li>
+                                <li>
+                                    Consultar información de obras y canciones
+                                </li>
+                                <li>
+                                    Crear reseñas  
+                                </li>
+                                <li>
+                                    Subir, editar y eliminar fanarts y dar “me gusta"
+                                </li>
+                            </ul>
+                            <div class="AIniciarTexto">
+                                ¿QUÉ ESPERAS PARA INICIAR TU VIAJE MUSICAL?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PIE DE FOOTER Con Logos, breve descripcion y otra vez links -->
+            <footer>
+                <div class="PieDePagina">
+
+                    <a class="LogoFooter" href="#inicio">
+                        <img class="LogoImgFooter" src="Assets/Img/PNG/Act1LogoVar2.png">
+                    </a>
+
+                    <img class="LogoMastar" src="Assets/Img/PNG/MastarStudioLogo.png">
+
+                    <Div class="ProximamenteTxt">PRÓXIMAMENTE</Div>
+
+                    <div class="DescripcionFooter">
+                        <div class="LinksFooter">
+                            <a class="linksF" href="#inicio">INICIO</a> 
+                            <a class="linksF" href="#albums">MUSICALES</a>  
+                            <a class="linksF" href="#sobre">SOBRE NOSOTROS</a>
+                        </div>
+                        <br>
+                        <div style="height: 0.5vh; background-color: bisque;"></div>
+                        <br>   
+                        <p>
+                            Act One es una webapp de reproducción de música y de comunidad para todos los 
+                            fanáticos de los musicales. Todas las canciones y albumes incluidos en nuestra
+                            aplicación son sin fines de lucro y solo se utilizan para el entretenimiento de
+                            los usuarios, al igual que el contenido audiovisual.
+                        </p>
+                        <br>
+                        <p>
+                            Act One es un proyecto de <b>Mastar Studio</b> creado por <b>"Mars Phoenix"</b>. Este proyecto 
+                            pertenece a la carrera de Diseño Digital de Medios Interactivos de la UACJ.
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </main>
+        <!-- ==== Script de la Barra de Nav ==== -->
+        <script src="JS/InicioScript.js"></script>
+    </body>
+</html>
